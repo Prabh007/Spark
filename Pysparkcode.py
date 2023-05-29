@@ -12,3 +12,5 @@ schema= StructType([
 sales_raw_df=spark.read.option('header','true').schema(schema).csv('salesdata',inferSchema=True)
 sales_raw_df.show(10)
 sales_raw_df.printSchema()
+# saving file in hive
+auto_df.write.mode("overwrite").saveAsTable("autompg")
